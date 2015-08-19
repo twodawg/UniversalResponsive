@@ -8,6 +8,32 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" FontSize="22">
+                <TextBlock.Text>
+                    Welcome to Mike Twohey's Universal Responsive example application and enjoy!
+                </TextBlock.Text>
+            </TextBlock>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" FontSize="18">
+                <TextBlock.Text>
+                    To prove that you are truly a human, enter the mathmatical question to the answer 42.
+                </TextBlock.Text>
+            </TextBlock>
+            
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top">
+            <TextBox x:Name="textBox" Text="Enter your answer here" MinWidth="200" Margin="5"/>
+            <Button x:Name="button" Content="Submit" Margin="5"/>
+        </StackPanel>
 
     </Grid>
 </Page>
