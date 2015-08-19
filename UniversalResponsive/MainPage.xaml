@@ -8,6 +8,26 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="HorizontalVisualState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="640"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VerticalVisualState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="320"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="stackPanel.(Grid.Row)" Value="1"/>
+                        <Setter Target="stackPanel.(Grid.Column)" Value="0"/>
+                    </VisualState.Setters>
+                </VisualState>
+                
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
@@ -16,7 +36,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        
+
         <StackPanel Grid.Column="0" Grid.Row="0">
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" FontSize="22">
                 <TextBlock.Text>
@@ -28,9 +48,9 @@
                     To prove that you are truly a human, enter the mathmatical question to the answer 42.
                 </TextBlock.Text>
             </TextBlock>
-            
+
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top">
+        <StackPanel x:Name="stackPanel" Grid.Column="1" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top">
             <TextBox x:Name="textBox" Text="Enter your answer here" MinWidth="200" Margin="5"/>
             <Button x:Name="button" Content="Submit" Margin="5"/>
         </StackPanel>
